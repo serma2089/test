@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            box-sizing: border-box;
+            background-color: #ffe4e1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .valentine-box {
+            background-color: #ffffff;
+            color: #ff4757;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-size: 29px;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            position: relative;
+            width: 600px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            height: 150px;
+            max-width: 100%;
+            object-fit: contain;
+            margin: 5px 0;
+        }
+        .sticky-note {
+            background-color: #fdfd86;
+            background-image: linear-gradient(transparent 29px, #b0b0b0 30px), linear-gradient(to bottom right, #ffffcc, #fdfd86);
+            background-size: 100% 30px, 100% 100%;
+            padding: 30px 20px;
+            width: 80%;
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+            font-family: 'Indie Flower', cursive;
+            font-size: 20px;
+            color: #333;
+            line-height: 30px;
+            margin: 10px 0;
+            transform: rotate(-3deg);
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+        }
+        .sticky-note::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #fdfd86;
+            background-image: linear-gradient(to top left, rgba(0,0,0,0.2), transparent);
+            box-shadow: -2px -2px 5px rgba(0,0,0,0.15);
+        }
+        .song-section {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .qr-code {
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .qr-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            width: 140px;
+            background-color: #616161;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 6px 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .qr-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        .restart-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            color: #ff4757;
+            opacity: 0.6;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .restart-btn:hover {
+            opacity: 1;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-box">
+        <div>Words from My Heart</div>
+        <div class="sticky-note">
+            All these years I have teased you, irritated you, cared you, stood with you, stood behind you. Now, I assure you I will continue to do this forever in rest of my life. You are my best buddy right now. I know I never told this every day, every time when you ask and when you expect but I will tell you one thing, even I didn't this express this in words I always Love You. I LOVE YOU Babeeeee....
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                <div style="text-align: center;">With Love,<br>Serma Arunachalam ❤️</div>
+            </div>
+        </div>
+        <div class="song-section">
+            <div>Song For You 🎵</div>
+            <div class="qr-container">
+                <a href="https://www.youtube.com/watch?v=gB1gPmtDohY&list=RDgB1gPmtDohY&start_radio=1" target="_blank">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgB1gPmtDohY%26list%3DRDgB1gPmtDohY%26start_radio%3D1" alt="Song QR Code" class="qr-code">
+                </a>
+                <span class="tooltip-text">Scan Me / Click Me</span>
+            </div>
+        </div>
+        <a href="index.html" class="restart-btn" title="Restart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+        </a>
+    </div>
+</body>
+</html>
